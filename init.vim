@@ -36,7 +36,9 @@ set hlsearch
 set noerrorbells
 set expandtab
 set smartindent
-set tabstop=4 softtabstop=4
+set smarttab
+set autoindent
+set tabstop=4 softtabstop=4 shiftwidth=4
 set mouse=a
 
 let g:coc_global_extensions = [
