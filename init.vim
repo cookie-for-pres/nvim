@@ -11,7 +11,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'voldikss/vim-floaterm'
-Plug 'mhinz/vim-startify'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
@@ -20,12 +19,21 @@ Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'akinsho/bufferline.nvim'
+Plug 'andweeb/presence.nvim'
+Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
 colorscheme gruvbox
 map <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 filetype plugin indent on
 syntax on
@@ -40,6 +48,7 @@ set smarttab
 set autoindent
 set tabstop=4 softtabstop=4 shiftwidth=4
 set mouse=a
+set clipboard=unnamed
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
@@ -51,7 +60,10 @@ let g:coc_global_extensions = [
   \  'coc-rust-analyzer'
   \ ]
 
+let g:floaterm_keymap_toggle = '<leader>t'
+
 set termguicolors
 lua << EOF
 require("bufferline").setup{}
 EOF
+
