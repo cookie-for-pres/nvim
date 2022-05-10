@@ -29,11 +29,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 colorscheme gruvbox
+
 map <silent> <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 filetype plugin indent on
 syntax on
@@ -49,6 +46,9 @@ set autoindent
 set tabstop=4 softtabstop=4 shiftwidth=4
 set mouse=a
 set clipboard=unnamed
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
